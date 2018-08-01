@@ -1,6 +1,18 @@
 
+# 1) All drugs had a lower number of metastatic sites than the placebo group, except for ketapril
+# by the end of the 45 days period. Only ketapril and zoniferol did not have a statistically
+# significantly lower number of sites at the end of the period, using the standard error bars.
+
+# 2) Only two drug treatments reduced the tumor size over time: capomulin and ramicane. These two
+# drugs showed reductions in tumor size of 19% and 22% respectively, while all other treaments including
+# the placebo showed tumor growth of more than 40% by day 45.
+
+# 3) The two drugs that showed reductions in tumor size over the 45 day period also had the highest
+# survival rates. Capomulin had an 85% survival rate and Ramicane's was 80%. All the other drugs
+# had survival rates below 60%.
+
 # Dependencies and Setup
-%matplotlib inline
+# %matplotlib inline
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
