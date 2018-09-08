@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
 from flask import Flask, jsonify
-
+import pandas as pd
 
 #################################################
 # Database Setup
@@ -95,6 +95,33 @@ def tobs():
 
     return jsonify(tobs_dict)
 
+@app.route("/api/v1.0/<start>")
+def start_date_temp(start):
+    """Return min, max, avg temps after specified start date"""
+
+    # Query all stations
+    temp_data = session.query(measurement.tobs).filter(measurement.date >= start)#.filter(Precip.station == 'USC00511918')
+
+    temp_df = pd.DataFrame(temp_data[:], columns = ['Temperature'])
+    TMIN = temp_df['Temperature'].min()
+    TMAX = temp_df['Temperature'].max()
+    TAVG = round(temp_df['Temperature'].mean(),1)
+
+    return f"Min temp: {TMIN}  <br/>  Max temp: {TMAX}  <br/>  Avg temp: {TAVG}"
+
+@app.route("/api/v1.0/<start>/<end>")
+def start_end_date_temp(start, end):
+    """Return min, max, avg temps after specified start date and before end date"""
+
+    # Query all stations
+    temp_data = session.query(measurement.tobs).filter(measurement.date >= start).filter(measurement.date <= end)
+
+    temp_df = pd.DataFrame(temp_data[:], columns = ['Temperature'])
+    TMIN = temp_df['Temperature'].min()
+    TMAX = temp_df['Temperature'].max()
+    TAVG = round(temp_df['Temperature'].mean(),1)
+
+    return f"Min temp: {TMIN}  <br/>  Max temp: {TMAX}  <br/>  Avg temp: {TAVG}"
 
 if __name__ == '__main__':
     app.run(debug=True)
