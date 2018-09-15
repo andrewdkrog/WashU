@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
-                    <a class="navbar-brand" href="Homepage.html">CFTC Positioning</a>
+                    <a class="navbar-brand" href="Homepage.html">Latitude</a>
                   </div>
             
                   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,10 +35,10 @@
                       <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizations <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                          <li><a href="Plots1.html">Soybeans</a></li>
-                          <li><a href="Plots2.html">Soybean Oil</a></li>
-                          <li><a href="Plots3.html">Soybean Meal</a></li>
-                          <li><a href="Plots4.html">Corn</a></li>
+                            <li><a href="Plots1.html">Max Temp</a></li>
+                            <li><a href="Plots2.html">Humidity</a></li>
+                            <li><a href="Plots3.html">Cloudiness</a></li>
+                            <li><a href="Plots4.html">Wind Speed</a></li>
                         </ul>
                       </li>
                       <li><a href="Comparison.html">Comparison</a></li>
@@ -60,10 +60,8 @@
                     <hr>
 
                     <img class="img" src="Resources/assets/images/Fig3.png" alt="first image" width="400" height="350">
-                    <p class = "text">This is an analysis and visualization of weather of 700+ cities across the world. The main objective was to showcase the relationship of various factors like temperature, humidity, cloudiness and wind speed with respect to the distance from the equator. <br> 
-                    For this analysis, approx. 2000 coordinate pairs of latitude and longitude were created randomly and then citypy (a python library) was used to generate city names for respective coordinates. 
-                    After selecting unique non-repeat observations, a weather check was performed on each of the cities using a series of successive API calls from OpenWeatherMap. Then all different point of interests were plotted against latitude using Matplotlib and Seaborn libraries.<br> 
-                    In conclusion, an equatorial climate is a type of tropical climate in which there is no dry season. It is usually found at latitudes within five degrees of the equator and tropical rainforest is the natural vegetation.</p>
+                    <p class = "text">                        
+                        Cloudiness clustered at round numbers with 0% and 90% appearing to be the most common values. There does not seem to be any obvious relationship between latitude and cloudiness among the cities randomly selected for this day.</p>
                     <br>
       
                     </div>
