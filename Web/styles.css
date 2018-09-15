@@ -1,0 +1,94 @@
+body {
+    background-color: #fff1e0;
+}
+
+
+
+h1 {
+     color: black;
+     background-color: rgb(242, 223, 206);
+     font-size: 20;
+     font-family: times new roman;
+     font-weight: bold;
+}
+
+h3 {
+     color: black;
+     background-color: rgb(242, 223, 206);
+     font-family: times new roman;
+     font-weight: bold;
+}
+
+img {
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+}
+
+p {
+   font-family: sans-serif;
+   font-size: 12
+}
+
+.data {
+    background-color: grey;
+}
+
+.container {
+  background-color:  #fff1e0;
+}
+
+.navbar {
+    padding-left: 50px;
+    background-color: #fff1e0;
+}
+
+.navbar-brand {
+    background-color: #fff1e0;
+    font-size: 40px;
+    font-family: times new roman;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar-collapse {
+    background-color: #fff1e0;
+    font-size: 20px;
+    font-family: times new roman;
+    color: black;
+}
+
+.navbar-default {
+    background-color:#fff1e0;
+    background-image: none;
+    background-repeat: no-repeat;
+   }
+
+.panel-body {
+    color: black;
+    background-color: rgb(242, 223, 206);
+    font-family: times new roman;
+}
+
+
+/* Navbar style that only applied at screen sizes below 480 pixels */
+@media (max-width: 480px) {
+  .navbar {
+    background-color: rgb(242, 223, 206);
+}
+
+.navbar-brand {
+    background-color:rgb(242, 223, 206);
+    font-family: times new roman;
+    font-weight: bold;
+    color: black;
+}
+
+.main_title {
+    font-weight: bold;
+    background-color: rgb(242, 223, 206);
+    color: black;
+    font-size: 60px;
+    font-style:italic;
+}

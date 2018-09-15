@@ -1,0 +1,11 @@
+.box {
+  min-height: 50px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: 800;
+}
+
+.FT { 
+  background-color: rgb(242, 223, 206);
+  color: black}
+
