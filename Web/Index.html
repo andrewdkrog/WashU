@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Index</title>
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="web-palette.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Homepage</title>
 </head>
 
-<body style="background-color: #fff1e0">
- 
-        <div class="container" style="margin-top:30px">
-            <a href="Index.html" style="text-decoration: none !important">
-                    <h3 class="text-left" style="font-size: 30pt; font-family: Georgia, 'Times New Roman', Times, serif; color: black">
-                            <b>CFTC Commodity Futures Positioning</b>
-                        </h3>
-            </a>
+<body>
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                    <a class="navbar-brand" href="Homepage.html">CFTC Positioning</a>
+                  </div>
             
-            <ul class="nav nav-tabs justify-content-end" >
-                    <li class="nav-link">
-                        <a href="Comparison.html">Comparison</a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="Data.html">Data</a>
-                    </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Plots</a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#" class="dropdown-item">Plot 1</a>
-                        <a href="#" class="dropdown-item ">Plot 2</a>
-                        <a href="#" class="dropdown-item ">Plot 3</a>
-                        <a href="#" class="dropdown-item ">Plot 4</a>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizations <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="Plots1.html">Max Temp</a></li>
+                          <li><a href="Plots2.html">Humidity</a></li>
+                          <li><a href="Plots3.html">Cloudiness</a></li>
+                          <li><a href="Plots4.html">Wind Speed</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="Comparison.html">Comparison</a></li>
+                      <li><a href="Data.html">Data</a></li>
+                    </ul>
+                  </div>
+                  <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+              </nav>   
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                    <h1>Fund Seasonal Net Positions</h1>
+                    <hr>
+
+                    <img class="img" src="Resources/assets/images/Fig1.png" alt="first image" width="400" height="350">
+                    <p class = "text">This is an analysis of the impact of latitude on several different weather variables: humidity, cloudiness, wind speed, and temperature.
+                    </p>
+                    <br>
+      
                     </div>
-                </li>
-            </ul>
-        </div>
-   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                        <div class="panel-body">                                    
+                            <h1>Seasonal Charts</h1>
+                            <hr>
 
-    <div class="container">
-        <div class="col-md-offset-1 col-md-10" style="background-color: rgb(242, 223, 206); margin-top: 30px;  padding-top: 10px; padding-bottom: 20px">
-            <h1 style="font-size: 20pt">
-                <b>Managed Money Seasonal Net Positioning</b>
-            </h1>   
-                <img src="Resources\assets\images\Fig2.png" width=60% height=60% class="pull-left myclass" />
-                <span style="color: black"><i> Soybean Fund Positioning</i> </span>
-                <p class="primary-text-color" style="margin: 5px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-                unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-        </div>
+                            <div class="row" >
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="Plots1.html"><img class = "img img-responsive" src="Resources/assets/images/Fig1.png" style="width:100%" alt=""></a></div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="Plots2.html"><img class = "img img-responsive" src="Resources/assets/images/Fig2.png" style="width:100%" alt=""></a></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="Plots3.html"><img class = "img img-responsive" src="Resources/assets/images/Fig3.png" style="width:100%" alt=""></a></div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><a href="Plots4.html"><img class = "img img-responsive" src="Resources/assets/images/Fig4.png" style="width:100%" alt=""></a></div>
+                            </div>
+                                
+                        </div>
+                </div>     
+            </div>    
     </div>
-
- </body>
-
+</body>
 </html>
-
