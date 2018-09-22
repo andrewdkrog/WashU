@@ -14,8 +14,13 @@
     <h1 class="jumbotron">Inventory</h1>
     <div>
 
-        <!-- @TODO: write a for loop that lists out your data and accesses the values using dot notation. -->
+        <ul style="list-style: none;">
 
+            {% for item in inventory %}
+            <li>{{ item }}</li>
+            {% endfor %}
+            
+        </ul>
     </div>
   </div>
 </body>

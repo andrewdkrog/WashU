@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loan Approver</title>
+</head>
+
+<body>
+
+  <h1>Open the Chrome Inspector Console!</h1>
+
+  <script  type="text/javascript">
+    var income = 25000;
+    var debtIncomeRatio = .5;
+    var yearsInJob = 3;
+    var criminalRecord = false;
+
+    if(income < 20000) {
+      console.log("No Loan");
+    }
+    else if(debtIncomeRatio > 1){
+      console.log("No Loan");
+    }
+    else if(yearsInJob < 1.5){
+      console.log("No Loan");
+    }
+    else if(criminalRecord = true){
+      console.log("No Loan");
+    }
+    else {
+      console.log("Loan");
+    }
+
+  </script>
+</body>
+
+</html>

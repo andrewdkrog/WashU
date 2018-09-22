@@ -14,9 +14,13 @@
     <h1 class="jumbotron">Favorite Movies</h1>
     <div>
 
-<!-- Create a list a group of movie cards -->
+        <ul style="list-style: none;">
 
-
+            {% for name in list %}
+            <li>{{ name }}</li>
+            {% endfor %}
+            
+        </ul>
 
     </div>
   </div>
