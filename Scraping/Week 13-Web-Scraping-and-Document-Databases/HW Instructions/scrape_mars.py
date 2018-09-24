@@ -6,7 +6,10 @@ from splinter import Browser
 import re
 
 def scrape():
-    browser = init_browser()
+    
+    # Set up splinter browser
+    executable_path = {'executable_path': 'chromedriver.exe'}
+    browser = Browser('chrome', **executable_path, headless=False)
     
     # Create dictionary to store scraped Mars data
     mars_data = {}
@@ -21,18 +24,14 @@ def scrape():
 
     # Find content titles, store first title
     titles = soup.find_all('div', class_="content_title")
-    news_title = titles[0].text
+    news_title = titles[0].text.replace('\n', '')
 
     # Find content description, save first one
     teasers = soup.find_all('div', class_="rollover_description_inner")
-    news_p = teasers[0].text
+    news_p = teasers[0].text.replace('\n', '')
 
     mars_data["news_title"] = news_title
     mars_data["summary"] = news_p
-
-    # Set up splinter browser
-    executable_path = {'executable_path': 'chromedriver.exe'}
-    browser = Browser('chrome', **executable_path, headless=False)
 
     # Mars image url to scrape
     image_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -106,10 +105,10 @@ def scrape():
 
     url = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
 
-    browser.visit(url4)
+    browser.visit(url)
     html = browser.html
     soup = bs(html, 'html.parser')
-    mars_hemis=[]
+    mars_hemis = []
 
     for i in range (4):
         images = browser.find_by_tag('h3')
