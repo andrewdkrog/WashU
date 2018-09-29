@@ -8,7 +8,12 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <!-- create select here -->
+    <select id="selDataset" onchange="getData(this.value)">
+        <option value="iTunes">iTunes</option>
+        <option value="Spotify">Spotify</option>
+        <option value="Pandora">Pandora</option>
+        <option value="Soundcloud">Soundcloud</option>
+      </select>
 
     <div id="pie"></div>
 

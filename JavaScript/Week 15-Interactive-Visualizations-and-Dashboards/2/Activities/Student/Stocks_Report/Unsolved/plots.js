@@ -1,4 +1,4 @@
-var apiKey = "YOUR KEY HERE";
+var apiKey = "ie4sM5G__EeDg6Sg5wi7";
 
 /**
  * Helper function to select stock data

@@ -1,4 +1,4 @@
-var apiKey = "YOUR KEY HERE";
+var apiKey = "ie4sM5G__EeDg6Sg5wi7";
 
 /* global Plotly */
 var url =
@@ -16,16 +16,21 @@ var url =
  * index 4 - Volume
  */
 function unpack(data, index) {
-  return data.map(function(row) {
-    return row[index];
-  });
+  return data.map(row => row[index])
 }
 
 /**
  * Fetch data and build the timeseries plot
  */
 function buildPlot() {
-  // @TODO: YOUR CODE HERE
+  d3.json(url).then(function(data) {
+    let date = data.dataset.data[0];
+  }
+
+trace = {
+  x: dates,
+  y: closingPrice
+};
 }
 
 buildPlot();
