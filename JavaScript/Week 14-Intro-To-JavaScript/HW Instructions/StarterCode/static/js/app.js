@@ -1,110 +1,55 @@
-// Get references to the tbody element, input field and button
-var $tbody = document.querySelector("tbody");
-var $dateInput = document.querySelector("#datetime");
-var $stateInput = document.querySelector("#state");
-var $searchBtn = document.querySelector("#search");
-var $cityInput = document.querySelector("#city");
-var $countryInput = document.querySelector("#country");
-var $shapeInput = document.querySelector("#shape");
+// create variable for where table will be entered in
+var tbody = d3.select("tbody")
 
 
-// Add an event listener to the searchButton, call handleSearchButtonClick when clicked
-$searchBtn.addEventListener("click", handleSearchButtonClick);
 
-// Set filteredAddresses to dataSet initially
-var filteredTable = data;
+// for each sighting in data, append that value to a new row within tbody table
+data.forEach(function(sightings) {
 
-// renderTable renders the filteredAddresses to the tbody
-function renderTable() {
-  $tbody.innerHTML = "";
-  for (var i = 0; i < filteredTable.length; i++) {
-    // Get get the current address object and its fields
-    var address = filteredTable[i];
-    console.log(address)
-    var fields = Object.keys(address);
-    // Create a new row in the tbody, set the index to be i + startingIndex
-    var $row = $tbody.insertRow(i);
-    for (var j = 0; j < fields.length; j++) {
-      // For every field in the address object, create a new cell at set its inner text to be the current value at the current address's field
-      var field = fields[j];
-      var $cell = $row.insertCell(j);
-      $cell.innerText = address[field];
-    }
-  }
-}
+   var row = tbody.append("tr");
 
-function handleSearchButtonClick() {
-  // Format the user's search by removing leading and trailing whitespace, lowercase the string
-  var filterDate = $dateInput.value;
-  var filterState = $stateInput.value.trim().toLowerCase();
-  var filterCity = $cityInput.value.trim().toLowerCase();
-  var filterCountry = $countryInput.value.trim().toLowerCase();
-  var filterShape = $shapeInput.value.trim().toLowerCase();
+   Object.entries(sightings).forEach(function([key, value]) {
+       // append a cell to the row for each value in data(sighting)
+       var cell = tbody.append("td");
+       cell.text(value);
+   });
+});
 
-  // Set filteredAddresses to an array of all addresses whose "state" matches the filter
-  if (filterDate != "")
-  {
-    filteredTable = data.filter(function(address) 
-    {
-      var addressDate = address.datetime; 
-    
-    // If true, add the address to the filteredAddresses, otherwise don't add it to filteredAddresses
-    return addressDate === filterDate;
-    });
-  }
-  else {filteredTable};
-  
+// Use d3 to call in the filter button id=filter-btn
+var filter= d3.select("#filter-btn");
 
-  if(filterState != "")
-  {
-    filteredTable = filteredTable.filter(function(address)
-    {
-      var addressState = address.state;
-      return addressState === filterState;
-    });
-  }
-  else{filteredTable};
+filter.on("click", function() {
 
-  if(filterCity != "")
-  {
-    filteredTable = filteredTable.filter(function(address)
-    {
-      var addressCity = address.city;
-      return addressCity === filterCity;
-    });
-  }
+ // Prevent the page from refreshing
+ d3.event.preventDefault();
 
-  else{filteredTable};
+ // Select the input element and get the raw HTML node
+ var inputElement = d3.select("#datetime");
 
-  if(filterCountry != "")
-  {
-    filteredTable = filteredTable.filter(function(address)
-    {
-      var addressCountry = address.country;
-      return addressCountry === filterCountry;
-    });
-  }
-  else{filteredTable};
+ // Get the value property from input element
+ var inputValue = inputElement.property("value");
 
-  if(filterShape != "")
-  {
-    filteredTable = filteredTable.filter(function(address)
-    {
-      var addressShape = address.shape;
-      return addressShape === filterShape;
-    });
-  }
-  else{filteredTable};
+ // console.log(inputValue);
 
-renderTable();
+ // create a filter where you search to make sure user-input matches up with filter date.
+ var filteredData = data.filter(sighting => sighting.datetime === inputValue);
 
-}
+ filteredData.forEach(function(newSightings) {
 
-// Render the table for the first time on page load
-renderTable();
+   var row = tbody.append("tr");
 
-//Add pagination to the table to show 10 -100 entries per page
+   Object.entries(newSightings).forEach(function([key, value]) {
+       // append a cell to the row for each value in data(sighting)
+       var cell = tbody.append("td");
+       cell.text(value);
+   });
+});
 
-$(document).ready(function() {
-  $('#table').DataTable();
+// Just to show it works in some capacity...
+console.table(filteredData);
+
+
+
+
+
 });
