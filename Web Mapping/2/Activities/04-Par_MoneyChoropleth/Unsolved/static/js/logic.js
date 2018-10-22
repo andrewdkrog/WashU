@@ -22,7 +22,8 @@ var geojson;
 
 // Grab data with d3
 d3.json(APILink, function(response){
-  
+  var choropleth
+
 })
   // Create a new choropleth layer
 

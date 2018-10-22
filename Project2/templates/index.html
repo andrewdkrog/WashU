@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Flask Plotlyjs Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Bundles of Dough</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="line">
+    <script>
+      // d3.json('/samples').then(function(data) {
+      //   var x_values = data.transaction;
+      //   var y_values = data.transaction;
+
+      //   var trace1 = {
+      //     x: x_values,
+      //     y: y_values,
+      //     type: 'line'
+      //     } 
+      //   };
+
+      //   var data = [trace1];
+
+      //   var layout = {
+      //     xaxis: { title: "Items"},
+      //     yaxis: { title: "Items"}
+      //   };
+
+      //   Plotly.newPlot('line', data, layout);
+
+      // })
+
+      var trace1 = {
+        x: ["beer", "wine", "martini", "margarita",
+            "ice tea", "rum & coke", "mai tai", "gin & tonic"],
+        y: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
+        type: "line"
+      };
+
+      Plotly.newPlot('line', trace1);
+    </script>
+  </div>
+
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <!-- <script src="/static/js/app.js"></script> -->
+
+</body>
+
+</html>
