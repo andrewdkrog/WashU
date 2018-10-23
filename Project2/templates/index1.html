@@ -85,7 +85,7 @@
       // Scale the range of the data
       x.domain(d3.extent(data, function(d) { return d.Date; }));
       y.domain([d3.min(data, function(d) {
-          return Math.min(d.High, d.Close, d.Low) }),
+          return Math.min(d.Id, d.Close, d.Low) }),
           d3.max(data, function(d) {
           return Math.max(d.High, d.Close, d.Low) })]);
       // Add the area path.

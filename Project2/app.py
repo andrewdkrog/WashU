@@ -37,6 +37,9 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/page2")
+def page2():
+    return render_template("page2.html")
 
 @app.route("/samples")
 def samples():
@@ -56,8 +59,8 @@ def daily():
     data = df
     df['Date'] = df['Date'].str.strip()
     customers = data.groupby(['Date'])['Transection'].max().reset_index()
-    customers.columns = ['Date','Cumulative Customers']
-    customers['Daily Customers'] = customers['Cumulative Customers'].diff()
+    customers.columns = ['Date','Cumulative_Customers']
+    customers['Daily_Customers'] = customers['Cumulative_Customers'].diff()
     customers.iloc[0,2] = customers.iloc[0,1]
     
     return customers.to_json(orient='records', lines=True)

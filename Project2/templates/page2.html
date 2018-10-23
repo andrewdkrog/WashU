@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Page 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <script>
+      d3.json('/daily').then(function(data) {
+        var x_values = data.Date;
+        var y_values = data.Daily_Customers;
+
+        var trace1 = {
+          x: x_values,
+          y: y_values,
+          type: 'line'
+          } 
+
+        print(x_values);
+        print(y_values);
+
+        var chart_data = [trace1];
+
+        var layout = {
+          xaxis: { title: "Items"},
+          yaxis: { title: "Items"}
+        };
+
+        Plotly.newPlot('line', chart_data, layout);
+
+        }
+      );
+
+    </script>
+  </div>
+
+
+  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="/static/js/app.js"></script>
+
+</body>
+
+</html>

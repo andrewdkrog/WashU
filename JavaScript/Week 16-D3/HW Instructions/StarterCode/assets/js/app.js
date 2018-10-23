@@ -397,5 +397,3 @@ ylabelsGroup.selectAll("text")
   });
 
 });
-
-   
